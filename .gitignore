@@ -1,2 +1,8 @@
+# Ignore Jetbrains files
 .idea/
+
+# Ignore virtual env
 venv/
+
+# Compiled python
+*.pyc
