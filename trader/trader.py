@@ -9,5 +9,5 @@ class Trader:
     def get_sentiment(self):
         return self._data_points
 
-    def test(self):
-        return self._cloud.get_current_price("aapl")
+    def update_data(self):
+        self._data_points.append(self._cloud.get_current_price("aapl"))

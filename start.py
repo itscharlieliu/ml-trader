@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from time import sleep
 
 from trader.trader import Trader
 import sys, argparse
@@ -11,7 +12,11 @@ def main(argv):
     api_key = args.api_key
 
     trader = Trader(api_key)
-    print(trader.test())
+
+    for i in range(10):
+        trader.update_data()
+        print(trader.get_sentiment())
+        sleep(1)
 
 
 if __name__ == '__main__':
