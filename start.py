@@ -11,12 +11,9 @@ def main(argv):
     args = parser.parse_args()
     api_key = args.api_key
 
-    trader = Trader(api_key)
+    trader = Trader(api_key, "aapl")
 
-    for i in range(10):
-        trader.update_data()
-        print(trader.get_sentiment())
-        sleep(1)
+    trader.train()
 
 
 if __name__ == '__main__':
