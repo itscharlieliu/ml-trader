@@ -22,3 +22,7 @@ class Trader:
         print(f"{curr_date} {start_date}")
         self._data_points = yfinance.download(self._ticker, start_date, curr_date)
         print(self._data_points)
+
+        x = self._data_points[:, 0:4]
+        y = self._data_points[:, 4]
+        x_train, x_validation, y_train, y_validation = train_test_split(x, y, test_size=0.20, random_state=1)
