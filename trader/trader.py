@@ -1,6 +1,7 @@
 import datetime
 
 import yfinance
+from sklearn.model_selection import train_test_split
 
 from iex.cloud import cloud
 
@@ -23,6 +24,6 @@ class Trader:
         self._data_points = yfinance.download(self._ticker, start_date, curr_date)
         print(self._data_points)
 
-        x = self._data_points[:, 0:4]
-        y = self._data_points[:, 4]
-        x_train, x_validation, y_train, y_validation = train_test_split(x, y, test_size=0.20, random_state=1)
+        # x = self._data_points[:, 0:4]
+        # y = self._data_points[:, 4]
+        # x_train, x_validation, y_train, y_validation = train_test_split(x, y, test_size=0.20, random_state=1)
