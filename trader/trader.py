@@ -34,15 +34,19 @@ class Trader:
 
         print(moving_avg)
 
-        matplotlib.rc('figure', figsize=(8, 7))
+        # matplotlib.rc('figure', figsize=(8, 7))
+        #
+        # style.use("ggplot")
+        #
+        # close_price.plot(label="AAPL")
+        # moving_avg.plot(label="Moving avg")
+        #
+        # pyplot.legend()
+        #
 
-        style.use("ggplot")
+        returns = close_price / close_price.shift(1) - 1
 
-        close_price.plot(label="AAPL")
-        moving_avg.plot(label="Moving avg")
-
-        pyplot.legend()
-
+        returns.plot(label="returns")
         pyplot.show()
 
 
